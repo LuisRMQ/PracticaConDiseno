@@ -1,0 +1,34 @@
+[
+    {
+        "cantidad": 7700,
+        "tipoCambio": {
+            "de": "USD",
+            "a": "GBP"
+        },
+        "total": 9212.85
+    },
+    {
+        "cantidad": 800,
+        "tipoCambio": {
+            "de": "USD",
+            "a": "GBP"
+        },
+        "total": 957.18
+    },
+    {
+        "cantidad": 122,
+        "tipoCambio": {
+            "de": "USD",
+            "a": "GBP"
+        },
+        "total": 145.97
+    },
+    {
+        "cantidad": 800,
+        "tipoCambio": {
+            "de": "USD",
+            "a": "GBP"
+        },
+        "total": 957.18
+    }
+]

@@ -27,7 +27,12 @@
         </div>
     </main>
 
-    <?php include 'scripts/footer.php'; ?>
+    <div id="footer-bar" class="footer-bar-6">
+    <a href="index.php" data-script="js/app.js"><i id="homeIcon"></i><span id="home"></span></a>
+    <a href="TipoCambio.php" data-script="js/TipoCambio.js"><i id="tpcambioIcon"></i><span id="tpcambio"></span></a>
+    <a href="Operaciones.php" data-script="js/Operaciones.js"><i id="operacionesIcon"></i><span id="operaciones"></span></a>
+    <a href="Cuenta.php" data-script="js/Configuracion.js"><i id="configuIcon"></i><span id="configu"></span></a>
+</div>
 
     <!-- Modal -->
     <div class="modal fade" id="agregarDivisaModal" tabindex="-1" aria-labelledby="agregarDivisaModalLabel" aria-hidden="true">
@@ -64,7 +69,6 @@
     <!-- Include Bootstrap JS and Custom Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/TipoCambio.js"></script>
-    <script src="js/app.js"></script>
 </body>
 
 </html>
