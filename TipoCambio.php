@@ -52,7 +52,7 @@
                             <input type="text" class="form-control" id="nombreDivisa" required>
                         </div>
                         <div class="mb-3">
-                            <label for="valorDivisa" class="form-label">Valor Compra</label>
+                            <label for="valorDivisa" class="form-label">Valor ($1 USD)</label>
                             <input type="number" class="form-control" id="valorDivisa" required>
                         </div>
                         <div class="mb-3">
