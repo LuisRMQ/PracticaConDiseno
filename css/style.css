@@ -8,6 +8,21 @@
 
 
 
+#logoPreview {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px; /* Ajusta el ancho a un tamaño más pequeño */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.center-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 main {
     max-width: 900px;
     margin: auto;

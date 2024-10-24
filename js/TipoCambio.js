@@ -26,10 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const codigo = document.getElementById("codigoDivisa").value;
         const nombre = document.getElementById("nombreDivisa").value;
         const valor = parseFloat(valorInput.value);
-        const valorVenta = parseFloat(valorVentaInput.value);
 
         const valorwi = "$" + valor;
-        const valorConDS = "$" + valorVenta;
 
 
         if (codigo && nombre && !isNaN(valor) && valor >= 0) {
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 codigo: codigo,
                 nombre: nombre,
                 valor: valorwi,
-                valorVenta: valorConDS,
             };
 
             fetch('guardarDivisa.php', {
@@ -87,8 +84,7 @@ function actualizarDivisasEnUI() {
         <tr>
             <th>Código</th>
             <th>Nombre</th>
-            <th>Valor de Compra</th>
-            <th>Valor de Venta</th>
+            <th>Valor en USD</th>
         </tr>
     `;
     table.appendChild(thead);
@@ -101,7 +97,6 @@ function actualizarDivisasEnUI() {
             <td>${divisa.codigo}</td>
             <td>${divisa.nombre}</td>
             <td>${divisa.valor}</td>
-            <td>${divisa.valorVenta}</td>
         `;
         tbody.appendChild(row);
     });

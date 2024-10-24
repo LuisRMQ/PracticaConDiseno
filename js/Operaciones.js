@@ -17,31 +17,38 @@ const cancelButton1 = document.getElementById("cancel-btn1");
 let divisasData = {};
 
 function populateSelect(selectElement, divisas) {
+    console.log(divisas);
     divisas.forEach(divisa => {
         const option = document.createElement("option");
         option.value = divisa.codigo;
         option.dataset.valor = parseFloat(divisa.valor.replace('$', ''));
-        option.dataset.valorVenta = parseFloat(divisa.valorVenta.replace('$', ''));
-        option.textContent = `${divisa.nombre} (Compra: ${divisa.valor}, Venta: ${divisa.valorVenta})`;
+        option.textContent = `${divisa.nombre} (Compra: ${divisa.valor})`;
         selectElement.appendChild(option);
     });
 }
 
+
 function convertCurrency() {
-    const fromValor = parseFloat(selectFrom.selectedOptions[0].dataset.valor);
-    const fromValorVenta = parseFloat(selectFrom.selectedOptions[0].dataset.valorVenta);
-    const toValor = parseFloat(selectTo.selectedOptions[0].dataset.valor);
-    const toValorVenta = parseFloat(selectTo.selectedOptions[0].dataset.valorVenta);
+    const fromValor = parseFloat(selectFrom.selectedOptions[0].dataset.valor); // Valor en dólares de la divisa de origen
+    const toValor = parseFloat(selectTo.selectedOptions[0].dataset.valor); // Valor en dólares de la divisa a convertir
     const amount = parseFloat(amountInput.value);
-    
+
+    // Verifica que los valores sean válidos
     if (!isNaN(amount) && fromValor && toValor) {
-        const resultCompra = (amount * toValor) / fromValor;
+        // Cálculo de la conversión para compra
+        const resultCompra = (amount * fromValor) / toValor;
         resultCompraDisplay.textContent = resultCompra.toFixed(2);
         
-        const resultVenta = (amount * toValorVenta) / fromValorVenta;
+        // Cálculo de la conversión para venta (10% menos)
+        const resultVenta = resultCompra * 0.9; 
         resultVentaDisplay.textContent = resultVenta.toFixed(2);
+    } else {
+        resultCompraDisplay.textContent = "";
+        resultVentaDisplay.textContent = "";
     }
 }
+
+
 
 function saveTransaction() {
     const amount = parseFloat(amountInput.value);
@@ -117,6 +124,12 @@ sellButton.addEventListener("click", () => {
 });
 
 confirmButton1.addEventListener("click", () => {
+    const fromCurrency = selectFrom.value; // Divisa de origen
+    const toCurrency = selectTo.value; // Divisa a la que se quiere convertir
+    const amount = parseFloat(amountInput.value); // Cantidad ingresada
+
+    console.log(fromCurrency,toCurrency,amount);
+
     saveVentaTransaction();
     confirmModal1.style.display = "none";
     alert("Venta confirmada!");
@@ -136,6 +149,12 @@ buyButton.addEventListener("click", () => {
 });
 
 confirmButton.addEventListener("click", () => {
+    const fromCurrency = selectFrom.value; // Divisa de origen
+    const toCurrency = selectTo.value; // Divisa a la que se quiere convertir
+    const amount = parseFloat(amountInput.value); // Cantidad ingresada
+
+    console.log(fromCurrency,toCurrency,amount);
+
     saveTransaction();
     confirmModal.style.display = "none";
     alert("¡Compra confirmada!");

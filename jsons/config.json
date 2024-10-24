@@ -3,7 +3,7 @@
         {
             "id": 1,
             "clave": "mensaje_bienvenida",
-            "valor": "BIENVENIDO APP"
+            "valor": "IUHJK"
         },
         {
             "id": 2,
@@ -23,36 +23,36 @@
         {
             "id": 5,
             "clave": "mensaje_home",
-            "valor": "Home",
-            "icono": "fa fa-home"
+            "valor": "HOME",
+            "icono": "fa-solid fa-home"
         },
         {
             "id": 6,
             "clave": "mensaje_cambio",
-            "valor": "Alta",
-            "icono": "fa fa-share"
+            "valor": "CAMBIO",
+            "icono": "fa-solid fa-sync"
         },
         {
             "id": 7,
             "clave": "mensaje_operaciones",
-            "valor": "Operaciones",
-            "icono": "fa fa-university"
+            "valor": "OPE",
+            "icono": "fa-solid fa-clipboard-list"
         },
         {
             "id": 8,
             "clave": "mensaje_config",
-            "valor": "Config",
-            "icono": "fa fa-user"
+            "valor": "CIBFIG",
+            "icono": "fa-solid fa-sliders-h"
         },
         {
             "id": 9,
             "clave": "TituloPag",
-            "valor": "Divisas Xz"
+            "valor": "JKJKJK"
         },
         {
             "id": 10,
             "clave": "ImagenInicio",
-            "valor": "images\/logo-moneda.png"
+            "valor": "images\/carne.png"
         }
     ]
 }

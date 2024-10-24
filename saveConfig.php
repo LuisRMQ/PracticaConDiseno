@@ -1,5 +1,6 @@
 <?php
 $configFile = 'jsons/config.json';
+$imageDir = 'images/';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nuevoTitulo = $_POST['titulo'] ?? null;
@@ -12,8 +13,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nuevoCambioIcon = $_POST['cambio_icon'] ?? null;
     $nuevoOperacionesIcon = $_POST['operaciones_icon'] ?? null;
     $nuevoConfigIcon = $_POST['config_icon'] ?? null;
-    $nuevaImagenInicio = $_POST['imagen_inicio'] ?? null;
+    $nuevaImagenInicio = $_FILES['logoFileInput'] ?? null;
 
+    if ($nuevaImagenInicio && $nuevaImagenInicio['error'] === UPLOAD_ERR_OK) {
+        $imagenPath = $imageDir . basename($nuevaImagenInicio['name']);
+        if (move_uploaded_file($nuevaImagenInicio['tmp_name'], $imagenPath)) {
+            $nuevaImagenInicio = $imagenPath;
+        } else {
+            echo "Error al subir la imagen.";
+            exit;
+        }
+    }
     if (file_exists($configFile)) {
         $jsonData = file_get_contents($configFile);
         $data = json_decode($jsonData, true);
@@ -25,30 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     break;
                 case "mensaje_home":
                     if ($nuevoMensajeHome) $config['valor'] = $nuevoMensajeHome;
+                    if ($nuevoHomeIcon) $config['icono'] = $nuevoHomeIcon; // Asegurar que se guarde el ícono
                     break;
                 case "mensaje_cambio":
                     if ($nuevoMensajeCambio) $config['valor'] = $nuevoMensajeCambio;
+                    if ($nuevoCambioIcon) $config['icono'] = $nuevoCambioIcon; // Asegurar que se guarde el ícono
                     break;
                 case "mensaje_operaciones":
                     if ($nuevoMensajeOperaciones) $config['valor'] = $nuevoMensajeOperaciones;
+                    if ($nuevoOperacionesIcon) $config['icono'] = $nuevoOperacionesIcon; // Asegurar que se guarde el ícono
                     break;
                 case "mensaje_config":
                     if ($nuevoMensajeConfig) $config['valor'] = $nuevoMensajeConfig;
+                    if ($nuevoConfigIcon) $config['icono'] = $nuevoConfigIcon; // Asegurar que se guarde el ícono
                     break;
                 case "mensaje_bienvenida":
                     if ($nuevoMensajeBienvenida) $config['valor'] = $nuevoMensajeBienvenida;
-                    break;
-                case "mensaje_home":
-                    if ($nuevoHomeIcon) $config['icono'] = $nuevoHomeIcon;
-                    break;
-                case "mensaje_cambio":
-                    if ($nuevoCambioIcon) $config['icono'] = $nuevoCambioIcon;
-                    break;
-                case "mensaje_operaciones":
-                    if ($nuevoOperacionesIcon) $config['icono'] = $nuevoOperacionesIcon;
-                    break;
-                case "mensaje_config":
-                    if ($nuevoConfigIcon) $config['icono'] = $nuevoConfigIcon;
                     break;
                 case "ImagenInicio":
                     if ($nuevaImagenInicio) $config['valor'] = $nuevaImagenInicio;
@@ -56,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
+        // Guardar el archivo de configuración actualizado
         if (file_put_contents($configFile, json_encode($data, JSON_PRETTY_PRINT))) {
             echo "success";
         } else {

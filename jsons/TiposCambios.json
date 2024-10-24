@@ -1,106 +1,24 @@
 {
     "divisas": [
         {
-            "codigo": "USD",
-            "nombre": "D\u00f3lar Americano",
-            "valor": "$19.85",
-            "valorVenta": "$21.84"
-        },
-        {
-            "codigo": "GBP",
-            "nombre": "Libra Esterlina",
-            "valor": "$23.75",
-            "valorVenta": "$29.13"
-        },
-        {
-            "codigo": "MXN",
+            "codigo": "MX",
             "nombre": "Peso Mexicano",
-            "valor": "$19.00",
-            "valorVenta": "$19.80"
+            "valor": "$0.052"
         },
         {
-            "codigo": "EUR",
-            "nombre": "Euro",
-            "valor": "$21.50",
-            "valorVenta": "$23.65"
-        },
-        {
-            "codigo": "JPY",
-            "nombre": "Yen Japon\u00e9s",
-            "valor": "$0.15",
-            "valorVenta": "$0.17"
-        },
-        {
-            "codigo": "CAD",
-            "nombre": "D\u00f3lar Canadiense",
-            "valor": "$15.00",
-            "valorVenta": "$16.50"
-        },
-        {
-            "codigo": "AUD",
-            "nombre": "D\u00f3lar Australiano",
-            "valor": "$14.30",
-            "valorVenta": "$15.73"
-        },
-        {
-            "codigo": "CHF",
-            "nombre": "Franco Suizo",
-            "valor": "$22.10",
-            "valorVenta": "$24.31"
-        },
-        {
-            "codigo": "CNY",
+            "codigo": "YN",
             "nombre": "Yuan Chino",
-            "valor": "$3.00",
-            "valorVenta": "$3.30"
+            "valor": "$0.14"
         },
         {
-            "codigo": "INR",
-            "nombre": "Rupia India",
-            "valor": "$0.25",
-            "valorVenta": "$0.28"
+            "codigo": "DL",
+            "nombre": "Dolar",
+            "valor": "$1"
         },
         {
-            "codigo": "BRL",
-            "nombre": "Real Brasile\u00f1o",
-            "valor": "$3.75",
-            "valorVenta": "$4.13"
-        },
-        {
-            "codigo": "ZAR",
-            "nombre": "Rand Sudafricano",
-            "valor": "$1.30",
-            "valorVenta": "$1.43"
-        },
-        {
-            "codigo": "KRW",
-            "nombre": "Won Surcoreano",
-            "valor": "$0.017",
-            "valorVenta": "$0.0187"
-        },
-        {
-            "codigo": "RRR",
-            "nombre": "RANDAS",
-            "valor": "$899",
-            "valorVenta": "$988.9"
-        },
-        {
-            "codigo": "TWTW",
-            "nombre": "YENES ",
-            "valor": "$899",
-            "valorVenta": "$988.9"
-        },
-        {
-            "codigo": "EE",
-            "nombre": "EEEE",
-            "valor": "$22",
-            "valorVenta": "$24.2"
-        },
-        {
-            "codigo": "ERTT",
-            "nombre": "ASDASD",
-            "valor": "$895",
-            "valorVenta": "$984.5"
+            "codigo": "YN",
+            "nombre": "Yen Japones",
+            "valor": "$0.0066"
         }
     ]
 }
