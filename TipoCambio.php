@@ -52,12 +52,8 @@
                             <input type="text" class="form-control" id="nombreDivisa" required>
                         </div>
                         <div class="mb-3">
-                            <label for="valorDivisa" class="form-label">Valor ($1 USD)</label>
+                            <label for="valorDivisa" class="form-label">Valor (USD)</label>
                             <input type="number" class="form-control" id="valorDivisa" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="diezPorciento" class="form-label">Valor Venta</label>
-                            <input type="text" class="form-control" id="diezPorciento" disabled>
                         </div>
                     </form>
                 </div>

@@ -6,5 +6,13 @@
             "a": "GBP"
         },
         "totalVenta": 1317.79
+    },
+    {
+        "cantidad": 10,
+        "tipoCambio": {
+            "de": "MX",
+            "a": "DL"
+        },
+        "totalVenta": 173.08
     }
 ]
