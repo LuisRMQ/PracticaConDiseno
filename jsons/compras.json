@@ -47,5 +47,13 @@
         },
         "totalCompra": 544.4,
         "totalVenta": 606.88
+    },
+    {
+        "cantidad": 10,
+        "tipoCambio": {
+            "de": "MX",
+            "a": "DL"
+        },
+        "totalCompra": 192.31
     }
 ]

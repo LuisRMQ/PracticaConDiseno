@@ -42,17 +42,17 @@
         <div class="card">
             <h1>Operación Compra - Venta</h1>
             <br>
-            <div class="input-container">
-                <label for="amount">Cantidad:</label>
-                <input type="number" id="amount" placeholder="Ingresa la cantidad" />
-            </div>
-            <br>
             <div class="select-container">
                 <label for="currency-from">De:</label>
                 <select id="currency-from"></select>
                 <br><br>
                 <label for="currency-to">A:</label>
                 <select id="currency-to"></select>
+            </div>
+            <br>
+            <div class="input-container">
+                <label for="amount">Cantidad:</label>
+                <input type="number" id="amount" placeholder="Ingresa la cantidad" />
             </div>
             <br>
             <div class="result-container">
