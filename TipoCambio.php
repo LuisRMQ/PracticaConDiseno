@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Dev'CoUee PWA</title>
+    <title id="titulo_app"></title>
 </head>
 
 <body>
@@ -17,7 +17,6 @@
             <h1>Alta Tipo de Cambio</h1>
             <br>
 
-            <!-- Updated Button with Correct Bootstrap Attributes -->
             <button class="btn btn-primary" id="agregarDivisaBtn" data-bs-toggle="modal" data-bs-target="#agregarDivisaModal">
                 Agregar Tipo de Cambio
             </button>
@@ -28,11 +27,11 @@
     </main>
 
     <div id="footer-bar" class="footer-bar-6">
-    <a href="index.php" data-script="js/app.js"><i id="homeIcon"></i><span id="home"></span></a>
-    <a href="TipoCambio.php" data-script="js/TipoCambio.js"><i id="tpcambioIcon"></i><span id="tpcambio"></span></a>
-    <a href="Operaciones.php" data-script="js/Operaciones.js"><i id="operacionesIcon"></i><span id="operaciones"></span></a>
-    <a href="Cuenta.php" data-script="js/Configuracion.js"><i id="configuIcon"></i><span id="configu"></span></a>
-</div>
+        <a href="index.php" data-script="js/app.js"><i id="homeIcon"></i><span id="home"></span></a>
+        <a href="TipoCambio.php" data-script="js/TipoCambio.js"><i id="tpcambioIcon"></i><span id="tpcambio"></span></a>
+        <a href="Operaciones.php" data-script="js/Operaciones.js"><i id="operacionesIcon"></i><span id="operaciones"></span></a>
+        <a href="Cuenta.php" data-script="js/Configuracion.js"><i id="configuIcon"></i><span id="configu"></span></a>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="agregarDivisaModal" tabindex="-1" aria-labelledby="agregarDivisaModalLabel" aria-hidden="true">
@@ -53,8 +52,12 @@
                             <input type="text" class="form-control" id="nombreDivisa" required>
                         </div>
                         <div class="mb-3">
-                            <label for="valorDivisa" class="form-label">Valor</label>
+                            <label for="valorDivisa" class="form-label">Valor Compra</label>
                             <input type="number" class="form-control" id="valorDivisa" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="diezPorciento" class="form-label">Valor Venta</label>
+                            <input type="text" class="form-control" id="diezPorciento" disabled>
                         </div>
                     </form>
                 </div>
@@ -66,7 +69,6 @@
         </div>
     </div>
 
-    <!-- Include Bootstrap JS and Custom Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/TipoCambio.js"></script>
 </body>

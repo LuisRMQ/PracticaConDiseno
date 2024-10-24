@@ -30,5 +30,22 @@
             "a": "GBP"
         },
         "total": 957.18
+    },
+    {
+        "cantidad": 8999,
+        "tipoCambio": {
+            "de": "MXN",
+            "a": "EUR"
+        },
+        "total": 193478.5
+    },
+    {
+        "cantidad": 455,
+        "tipoCambio": {
+            "de": "USD",
+            "a": "GBP"
+        },
+        "totalCompra": 544.4,
+        "totalVenta": 606.88
     }
 ]

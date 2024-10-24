@@ -8,20 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
         agregarDivisaModal.show();
     });
 
+    const valorInput = document.getElementById("valorDivisa");
+    const valorVentaInput = document.getElementById("diezPorciento");
+
+    valorInput.addEventListener("input", () => {
+        const valor = parseFloat(valorInput.value);
+        if (!isNaN(valor)) {
+            const valorVenta = (valor * 1.10).toFixed(2); 
+            valorVentaInput.value = valorVenta;
+        } else {
+            valorVentaInput.value = ""; 
+        }
+    });
+
     const guardarDivisaBtn = document.getElementById("guardarDivisaBtn");
     guardarDivisaBtn.addEventListener("click", () => {
         const codigo = document.getElementById("codigoDivisa").value;
         const nombre = document.getElementById("nombreDivisa").value;
-        const valor = parseFloat(document.getElementById("valorDivisa").value);
-        const valorwi = "$"+valor;
+        const valor = parseFloat(valorInput.value);
+        const valorVenta = parseFloat(valorVentaInput.value);
+
+        const valorwi = "$" + valor;
+        const valorConDS = "$" + valorVenta;
+
 
         if (codigo && nombre && !isNaN(valor) && valor >= 0) {
             const nuevaDivisa = {
                 codigo: codigo,
                 nombre: nombre,
-                valor: valorwi
+                valor: valorwi,
+                valorVenta: valorConDS,
             };
-      
 
             fetch('guardarDivisa.php', {
                 method: 'POST',
@@ -62,17 +79,43 @@ function actualizarDivisasEnUI() {
     const contenedor = document.getElementById('divisas-container');
     contenedor.innerHTML = '';
 
+    const table = document.createElement('table');
+    table.classList.add('table', 'table-striped');
+
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Valor de Compra</th>
+            <th>Valor de Venta</th>
+        </tr>
+    `;
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
+
     divisas.forEach(divisa => {
-        const div = document.createElement("div");
-        div.innerHTML = `<p>${divisa.nombre} (${divisa.codigo}) <strong>${divisa.valor}</strong></p>`;
-        contenedor.appendChild(div);
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${divisa.codigo}</td>
+            <td>${divisa.nombre}</td>
+            <td>${divisa.valor}</td>
+            <td>${divisa.valorVenta}</td>
+        `;
+        tbody.appendChild(row);
     });
+
+    table.appendChild(tbody);
+    contenedor.appendChild(table);
 }
 
 function cargarConfig() {
     fetch('./jsons/config.json') 
         .then(response => response.json())
         .then(data => {
+
+            
             const configuraciones = data.configuraciones;
             const mensajeCammbio = configuraciones.find(config => config.clave === "mensaje_cambio").valor;
             const mensajeOperaciones = configuraciones.find(config => config.clave === "mensaje_operaciones").valor;
@@ -82,9 +125,11 @@ function cargarConfig() {
             const mensajeOperacionesIcon = configuraciones.find(config => config.clave === "mensaje_operaciones").icono;
             const mensajeConfigIcon = configuraciones.find(config => config.clave === "mensaje_config").icono;
             const mensajehome = configuraciones.find(config => config.clave === "mensaje_home").valor;
+            const mensajeTitulo = configuraciones.find(config => config.clave === "TituloPag").valor;
+            document.getElementById("titulo_app").textContent = mensajeTitulo;
+          
 
             document.getElementById("home").textContent = mensajehome;
-
             document.getElementById("tpcambio").textContent = mensajeCammbio;
             document.getElementById("operaciones").textContent = mensajeOperaciones;
             document.getElementById("configu").textContent = mensajeConfig;
@@ -97,10 +142,6 @@ function cargarConfig() {
         .catch(error => console.error("Error al cargar el mensaje de bienvenida:", error));
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     cargarConfig();
-    
-  
 });

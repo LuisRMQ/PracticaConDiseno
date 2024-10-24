@@ -3,12 +3,12 @@
         {
             "id": 1,
             "clave": "mensaje_bienvenida",
-            "valor": "BIENVENIDO A Calculator APP"
+            "valor": "BIENVENIDO APP"
         },
         {
             "id": 2,
             "clave": "alerta_error_operacion",
-            "valor": "Ha ocurrido un error al realizar la operación. Por favor, intente nuevamente."
+            "valor": "Ha ocurrido un error al realizar la operaci\u00f3n. Por favor, intente nuevamente."
         },
         {
             "id": 3,
@@ -18,46 +18,41 @@
         {
             "id": 4,
             "clave": "alerta_exito_operacion",
-            "valor": "La operación se ha realizado con éxito."
+            "valor": "La operaci\u00f3n se ha realizado con \u00e9xito."
         },
         {
             "id": 5,
             "clave": "mensaje_home",
             "valor": "Home",
             "icono": "fa fa-home"
-
         },
         {
             "id": 6,
             "clave": "mensaje_cambio",
-            "valor": "Operaciones",
-            "icono": "fa fa-university"
-
+            "valor": "Alta",
+            "icono": "fa fa-share"
         },
         {
             "id": 7,
             "clave": "mensaje_operaciones",
-            "valor": "Alta",
-            "icono": "fa fa-share"
-
+            "valor": "Operaciones",
+            "icono": "fa fa-university"
         },
         {
             "id": 8,
             "clave": "mensaje_config",
             "valor": "Config",
             "icono": "fa fa-user"
-
         },
         {
             "id": 9,
             "clave": "TituloPag",
-            "valor": "Divisas APP"
+            "valor": "Divisas Xz"
         },
         {
-            "id":10,
+            "id": 10,
             "clave": "ImagenInicio",
-            "valor":"images/logo-moneda.png"
+            "valor": "images\/logo-moneda.png"
         }
-
     ]
 }

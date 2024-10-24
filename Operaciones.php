@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Dev'CoUee PWA</title>
-    <style>
+    <title id="titulo_app"></title>
+        <style>
         .modal {
             display: none;
             position: fixed;
@@ -56,8 +56,16 @@
             </div>
             <br>
             <div class="result-container">
-                <p>Total: <span id="result">0.00</span></p>
+                <div>
+                    <label for="result-compra">Resultado de Compra:</label>
+                    <span id="result-compra"></span> 
+                </div>
+                <div>
+                    <label for="result-venta">Resultado de Venta:</label>
+                    <span id="result-venta"></span> 
+                </div>
             </div>
+
             <div class="button-container">
                 <button class="btn" id="buy-btn">Compra</button>
                 <button class="btn" id="sell-btn">Venta</button>
@@ -74,12 +82,24 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal" id="confirm-modal1">
+        <div class="modal-content">
+            <p>¿Deseas confirmar la Venta?</p>
+            <div class="modal-buttons">
+                <button id="confirm-btn1">Confirmar</button>
+                <button id="cancel-btn1">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <div id="footer-bar" class="footer-bar-6">
-    <a href="index.php" ><i id="homeIcon"></i><span id="home"></span></a>
-    <a href="TipoCambio.php" d><i id="tpcambioIcon"></i><span id="tpcambio"></span></a>
-    <a href="Operaciones.php" ><i id="operacionesIcon"></i><span id="operaciones"></span></a>
-    <a href="Cuenta.php" ><i id="configuIcon"></i><span id="configu"></span></a>
-</div>
+        <a href="index.php"><i id="homeIcon"></i><span id="home"></span></a>
+        <a href="TipoCambio.php" d><i id="tpcambioIcon"></i><span id="tpcambio"></span></a>
+        <a href="Operaciones.php"><i id="operacionesIcon"></i><span id="operaciones"></span></a>
+        <a href="Cuenta.php"><i id="configuIcon"></i><span id="configu"></span></a>
+    </div>
 
     <script src="js/Operaciones.js"></script>
 
