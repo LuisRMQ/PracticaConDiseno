@@ -36,7 +36,7 @@ function convertCurrency() {
     // Verifica que los valores sean válidos
     if (!isNaN(amount) && fromValor && toValor) {
         // Cálculo de la conversión para compra
-        const resultCompra = (amount * toValor) / fromValor;
+        const resultCompra = (amount * fromValor) / toValor;
         resultCompraDisplay.textContent = resultCompra.toFixed(2);
         
         // Cálculo de la conversión para venta (10% menos)
